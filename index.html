@@ -1,12 +1,32 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>index</title>
+<meta charset="utf-8"/>
+<title>貳拾條</title>
+<style>body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,textarea,hr{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%}li{list-style:none}fieldset,img{border:0}pre{white-space:pre-wrap;word-wrap:break-word}table{border-collapse:collapse;border-spacing:0}q:before,q:after{content:''}abbr[title],acronym[title]{border-bottom:1px dotted;cursor:help}address,cite,dfn,em,var{font-style:normal}button,input,select,textarea{font-size:100%}body,button,input,select,textarea{font:12px/1 Arial,Tahoma,Helvetica,SimSun,san-serif}.t_sina_api{width:960px;margin:50px auto;padding:10px 0}#content,#user_content,.profile_image,.t_content,#user_info dl dt,#user_info dl dd{float:left;display:inline}#user_info dl dd{width:260px;margin-left:10px}#user_info div{margin:6px 0 0}#content{width:590px}#user_content{width:340px;padding:0 10px;height:460px;overflow:auto;position:fixed;top:80px;display:none}.profile_image{width:50px;height:50px;overflow:hidden;margin:0 10px}.t_content{width:490px;line-height:1.5}#user_info{line-height:1.5;padding:10px 0}#id_comment .t_content{width:420px}#user_content .t_content{width:310px}.t_wrap{cursor:pointer;margin:10px 0}.text_img{margin:6px 0 0}#header{height:40px;width:100%;position:fixed;top:0}#header h1{font-size:14px;line-height:36px;font-weight:400;width:960px;margin:0 auto}#header span{float:right;font-size:12px}html{background:url(http://pic.xoyo.com/cms/www/t/background.png) repeat 0 0 #000 fixed}#btn{position:fixed;right:300px;bottom:100px;font-size:14px;font-family:微软雅黑;display:block;padding:12px 16px;text-decoration:none;background-color:#b7740b;color:#fffcf3;border-radius:10px;-moz-border-radius:10px}#btn:hover{background-color:#131313;color:#fff}#user_content{background-color:#131313;color:#fff;border-radius:6px 0 0 6px;-moz-border-radius:6px 0 0 6px;opacity:.7}#user_info{border-bottom:2px dashed #2a2a2a;color:#999}#content .t_wrap{border-bottom:1px dashed #575757;padding:10px 0;margin:0 10px;color:#919191}#content .t_content{width:470px}#user_content .t_wrap{border-bottom:1px solid #2a2a2a;padding:10px;margin:0;cursor:default;color:#595957}#user_content .t_wrap:hover{background-color:#000;color:#CCC}#content .t_wrap:hover{background:#000 url(http://pic.xoyo.com/cms/www/t/go.png) no-repeat 98% 13px;color:#CCC}#content{background-color:#262626;-webkit-box-shadow:2px 2px 10px #000;-moz-box-shadow:2px 2px 10px #000;border-radius:6px;-moz-border-radius:6px;padding:10px 0}#header{height:40px;width:100%;position:fixed;top:0;background-color:#333;color:#999;-webkit-box-shadow:1px 1px 6px #000;-moz-box-shadow:1px 1px 6px #000}#header h1{font-size:14px;line-height:36px;font-weight:400;width:960px;margin:0 auto}#header span{float:right;color:#666;font-size:12px}*/#container,.t_wrap,#user_info dl{zoom:1}#container:after,.t_wrap:after,#user_info dl:after{content:".";display:block;height:0;clear:both;visibility:hidden}</style>
 </head>
-
 <body>
-<h1>pages</h1>
-<p>charies</p>
+<a id="api" name="api" style="position:absolute;top:0;"></a>
+<div id="header">
+<h1><span>by charies</span>貳拾條 <sup>beta1</sup></h1>
+</div>
+<div class="t_sina_api" id="t_sina_api">
+<div id="container">
+<div id="content">
+<span style="color:#999; padding:0 0 0 10px;">點擊 最新貳拾條 按鈕</span>
+</div>
+<div id="user_content">
+</div>
+</div>
+</div>
+<div id="footer">
+</div>
+<a id="btn" href="#api">最新 貳拾條</a>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script>$(function(){var d={};d.AppKey="2860833036";d.AppSecret="339bd75656bdaaa8b6b0c6790c43c1f1";d.twentySrc="http://api.t.sina.com.cn/statuses/public_timeline.json?source="+d.AppKey+"&callback=?";d.getTwenty=function(){$.getJSON(d.twentySrc,function(e){var b="";$.each(e,function(a,c){b+='<div id="'+c.user.id+'" class="t_wrap go_userCon">';b+='<div class="profile_image">';b+='<a target="_blank" href="http://t.sina.com.cn/'+c.user.id+'">';b+='<img src="'+c.user.profile_image_url+'" title="'+c.user.screen_name+
+'">';b+="</a>";b+="</div>";b+='<div class="t_content">';b+='<div id="'+c.id+'" class="text">';b+="<pre>"+c.text+"</pre>";b+="</div>";if(c.bmiddle_pic){b+='<div class="text_img">';b+='<a title="\u539f\u56fe" target="_blank" href="'+c.original_pic+'">';b+='<img src="'+c.bmiddle_pic+'">';b+="</a>";b+="</div>"}b+="</div>";b+="</div>"});$("#content").html(b);g()})};d.getUserCon=function(e){var b="http://api.t.sina.com.cn/users/show/"+e+".json?source="+d.AppKey+"&callback=?";e="http://api.t.sina.com.cn/statuses/user_timeline.json?user_id="+
+e+"&source="+d.AppKey+"&callback=?";$("#user_content").empty();var a="";$.getJSON(b,function(c){a+='<div id="user_info">';a+="<dl>";a+="<dt>";a+='<img src="'+c.profile_image_url+'">';a+="</dt>";a+="<dd>\u59d3\u540d\uff1a<strong>"+c.name+"</strong></dd>";a+="<dd>\u5730\u5740\uff1a<strong>"+c.location+"</strong></dd>";a+="<dd>\u7c89\u4e1d\uff1a<strong>"+c.followers_count+"</strong></dd>";a+="</dl>";a+="<div>";if(c.description)a+="<pre>"+c.description+"</pre>";a+="</div>";a+="</div>"});$.getJSON(e,function(c){$.each(c,
+function(h,f){a+='<div class="t_wrap">';a+='<div class="t_content">';a+='<div class="text">';a+="<pre>"+f.text+"</pre>";a+="</div>";if(f.thumbnail_pic){a+='<div class="text_img">';a+='<a title="\u539f\u56fe" href="'+f.original_pic+'" target="_blank">';a+='<img src="'+f.thumbnail_pic+'">';a+="</a>";a+="</div>"}a+="</div>";a+="</div>"});$("#user_content").html(a)})};d.getTwenty();$("#btn").click(function(){d.getTwenty()});var g=function(){$(".go_userCon").click(function(){var e=$(this).attr("id"),b=
+590+($(window).width()-960)/2;$("#user_content").css("left",b).show();d.getUserCon(e)})}});</script>
 </body>
 </html>
