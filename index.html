@@ -32,8 +32,10 @@ $(function(){var d={};d.AppKey="2860833036";d.AppSecret="339bd75656bdaaa8b6b0c67
 e+"&source="+d.AppKey+"&callback=?";$("#user_content").empty();var a="";$.getJSON(b,function(c){a+='<div id="user_info">';a+="<dl>";a+="<dt>";a+='<img src="'+c.profile_image_url+'">';a+="</dt>";a+="<dd>\u59d3\u540d\uff1a<strong>"+c.name+"</strong></dd>";a+="<dd>\u5730\u5740\uff1a<strong>"+c.location+"</strong></dd>";a+="<dd>\u7c89\u4e1d\uff1a<strong>"+c.followers_count+"</strong></dd>";a+="</dl>";a+="<div>";if(c.description)a+="<pre>"+c.description+"</pre>";a+="</div>";a+="</div>"});$.getJSON(e,function(c){$.each(c,
 function(h,f){a+='<div class="t_wrap">';a+='<div class="t_content">';a+='<div class="text">';a+="<pre>"+f.text+"</pre>";a+="</div>";if(f.thumbnail_pic){a+='<div class="text_img">';a+='<a title="\u539f\u56fe" href="'+f.original_pic+'" target="_blank">';a+='<img src="'+f.thumbnail_pic+'">';a+="</a>";a+="</div>"}a+="</div>";a+="</div>"});$("#user_content").html(a)})};d.getTwenty();$("#btn").click(function(){d.getTwenty()});var g=function(){$(".go_userCon").click(function(){var e=$(this).attr("id"),b=
 590+($(window).width()-960)/2;$("#user_content").css("left",b).show();d.getUserCon(e)})}});
+</script>
+<script>
 $('html').bind('keydown', function(e){
-if(e.which == 39){
+if(e.which == 37){
  $('#btn').click();
  $(this).scrollTop(0); 
 }
